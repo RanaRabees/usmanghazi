@@ -1,0 +1,105 @@
+import * as WebBrowser from 'expo-web-browser';
+import { StyleSheet, TouchableOpacity } from 'react-native';
+
+import Colors from '../constants/Colors';
+import { MonoText } from './StyledText';
+import { Text, View } from './Themed';
+
+export default function EditScreenInfo({ path }: { path: string }) {
+  return (
+    <View>
+      <View style={styles.getStartedContainer}>
+        <Text
+          style={styles.getStartedText}
+          lightColor="rgba(0,0,0,0.8)"
+          darkColor="rgba(255,255,255,0.8)">
+
+      <Text >ASSALAMUALAIKUM THIS IS ADEEMA AAMIR SWEET CUTE BABY!</Text>
+      {/* <StatusBar style="auto" />
+    </View>
+  );
+} */}
+
+              
+{/* style={styles.Text}  */}
+{/* <View style={styles.container}></View> */}
+{/* const styles = StyleSheet.create({
+container: {
+flex: 1,
+backgroundColor: 'pink',
+alignItems: 'center',
+justifyContent: 'center',
+},
+Text: {
+color: 'red',
+fontSize: 20,
+textAlign : 'center',
+
+},
+}); */}
+
+        </Text>
+
+        <View
+          style={[styles.codeHighlightContainer, styles.homeScreenFilename]}
+          darkColor="rgba(255,255,255,0.05)"
+          lightColor="rgba(0,0,0,0.05)">
+          <MonoText>{path}</MonoText>
+        </View>
+
+        <Text
+          style={styles.getStartedText}
+          lightColor="rgba(0,0,0,0.8)"
+          darkColor="rgba(255,255,255,0.8)">
+          MY SWEET BABY IS ADEEMA AMIR
+        </Text>
+      </View>
+
+      <View style={styles.helpContainer}>
+        <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
+          <Text style={styles.helpLinkText} lightColor={Colors.light.tint}>
+            ADEEMA AAMIR IS A GENIOUS GIRL 
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
+
+function handleHelpPress() {
+  WebBrowser.openBrowserAsync(
+    'https://docs.expo.io/get-started/create-a-new-app/#opening-the-app-on-your-phonetablet'
+  );
+}
+
+const styles = StyleSheet.create({
+  getStartedContainer: {
+    alignItems: 'center',
+    marginHorizontal: 50,
+    backgroundColor:'orange',
+  },
+  homeScreenFilename: {
+    marginVertical: 7,
+  },
+  codeHighlightContainer: {
+    borderRadius: 3,
+    paddingHorizontal: 4,
+  },
+  getStartedText: {
+    fontSize: 17,
+    lineHeight: 24,
+    textAlign: 'center',
+  },
+  helpContainer: {
+    marginTop: 15,
+    marginHorizontal: 20,
+    alignItems: 'center',
+    backgroundColor:'red',
+  },
+  helpLink: {
+    paddingVertical: 15,
+  },
+  helpLinkText: {
+    textAlign: 'center',
+  },
+});
